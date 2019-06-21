@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import random       #导入模块或函数
 
 print("============以下是for循环示例===================")
@@ -86,7 +87,7 @@ print('转换37' + c2.units_from)
 print('等于：' + str(round(c2.convert(37), 2)) + c2.units_to)
 print("============以下是读文件的示例===================")
 try:
-    with open('word.txt') as f:     #这样写就不要每次写ff.close()了
+    with open('word.txt', encoding='utf-8') as f:     #这样写就不要每次写ff.close()了
         words = f.read()       #把文件全部读入内存，如果大文件就不合适了
     print("文件存在。")
 except IOError:
@@ -98,7 +99,7 @@ print(words.split().__class__)
 print(words.split())
 print("============以下是文件读行的示例===================")
 try:
-    f = open('word.txt')
+    f = open('word.txt', encoding='utf-8')
     print("文件存在。")
     line = f.readline()    #每次读取文件的一行，如果大文件就比较合理
     while line != "":
@@ -113,7 +114,7 @@ except IOError:
     print("文件不存在。")
     exit()
 print("============以下是文件写的示例===================")
-with open('word3.txt', 'a') as ff:      #这样写就不要每次写ff.close()了
+with open('word3.txt', 'a', encoding='utf-8') as ff:      #这样写就不要每次写ff.close()了
     ff.write('asldj567中国字asjdffl\n')
 print("============以下是文件系统操作的示例===================")
 import shutil
